@@ -85,6 +85,18 @@ export default {
             type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
           }
         },
+        legend: {
+          x: '35%',
+          y: 'top',
+          data: ['油温1', '油温2', '油温3', '油温4', '入水温', '出水温'],
+          textStyle: {
+            color: 'gray',
+            fontSize: 12
+          },
+          itemWidth: 10,
+          itemHeight: 10,
+          padding: [0, 20, 10, 10]
+        },
         grid: {
           top: 10,
           left: '2%',
