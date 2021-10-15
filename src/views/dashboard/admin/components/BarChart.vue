@@ -22,7 +22,7 @@ export default {
     },
     height: {
       type: String,
-      default: '300px'
+      default: '400px'
     },
     chartData: {
       type: Object,
@@ -60,7 +60,7 @@ export default {
       this.setOptions(this.chartData)
     },
 
-    setOptions(data) {
+    setOptions(chartData) {
       const names = []
       const oilTemp1 = []
       const oilTemp2 = []
@@ -68,6 +68,7 @@ export default {
       const oilTemp4 = []
       const waterInTemp = []
       const waterOutTemp = []
+      const data = chartData.data
       for (let i = 0; i < data.length; i++) {
         names.push(data[i][0])
         oilTemp1.push(data[i][1])
@@ -79,6 +80,11 @@ export default {
       }
 
       this.chart.setOption({
+        title: {
+          text: '机柜温度监控数据',
+          subtext: chartData.time,
+          y: 'top'
+        },
         tooltip: {
           trigger: 'axis',
           axisPointer: { // 坐标轴指示器，坐标轴触发有效
@@ -98,7 +104,7 @@ export default {
           padding: [0, 20, 10, 10]
         },
         grid: {
-          top: 10,
+          top: '20%',
           left: '2%',
           right: '2%',
           bottom: '3%',
@@ -115,44 +121,76 @@ export default {
           type: 'value',
           axisTick: {
             show: false
-          }
+          },
+          max: 80,
+          min: 0
         }],
         series: [{
           name: '油温1',
           type: 'bar',
           barWidth: '10%',
           data: oilTemp1,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#FFB533'
+            }
+          }
         }, {
           name: '油温2',
           type: 'bar',
           barWidth: '10%',
           data: oilTemp2,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#FFB533'
+            }
+          }
         }, {
           name: '油温3',
           type: 'bar',
           barWidth: '10%',
           data: oilTemp3,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#FFB533'
+            }
+          }
         }, {
           name: '油温4',
           type: 'bar',
           barWidth: '10%',
           data: oilTemp4,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#FFB533'
+            }
+          }
         }, {
           name: '入水温',
           type: 'bar',
           barWidth: '10%',
           data: waterInTemp,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#33D4FF'
+            }
+          }
         }, {
           name: '出水温',
           type: 'bar',
           barWidth: '10%',
           data: waterOutTemp,
-          animationDuration
+          animationDuration,
+          itemStyle: {
+            normal: {
+              color: '#33D4FF'
+            }
+          }
         }]
       })
     }
