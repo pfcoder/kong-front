@@ -8,12 +8,18 @@
         </div>
       </el-col>
     </el-row>
+    <el-row :gutter="8">
+      <el-col :xs="{span: 24}" :sm="{span: 24}" :md="{span: 24}" :lg="{span: 24}" :xl="{span: 24}" style="padding-right:8px;margin-bottom:30px;">
+        <kong-table :table-data="kongTemperatureData" />
+      </el-col>
+    </el-row>
 
   </div>
 </template>
 
 <script>
 import BarChart from './components/BarChart'
+import KongTable from './components/KongTable'
 import { getTemperatures } from '@/api/kong'
 
 var tempTestData = {
@@ -27,7 +33,8 @@ var tempTestData = {
 export default {
   name: 'DashboardAdmin',
   components: {
-    BarChart
+    BarChart,
+    KongTable
   },
   data() {
     return {

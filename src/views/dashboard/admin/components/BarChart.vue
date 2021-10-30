@@ -61,6 +61,7 @@ export default {
     },
 
     setOptions(chartData) {
+      const barWidth = '8%'
       const names = []
       const oilTemp1 = []
       const oilTemp2 = []
@@ -128,7 +129,7 @@ export default {
         series: [{
           name: '油温1',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: oilTemp1,
           animationDuration,
           itemStyle: {
@@ -139,7 +140,7 @@ export default {
         }, {
           name: '油温2',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: oilTemp2,
           animationDuration,
           itemStyle: {
@@ -150,7 +151,7 @@ export default {
         }, {
           name: '油温3',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: oilTemp3,
           animationDuration,
           itemStyle: {
@@ -161,7 +162,7 @@ export default {
         }, {
           name: '油温4',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: oilTemp4,
           animationDuration,
           itemStyle: {
@@ -172,7 +173,7 @@ export default {
         }, {
           name: '入水温',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: waterInTemp,
           animationDuration,
           itemStyle: {
@@ -183,7 +184,7 @@ export default {
         }, {
           name: '出水温',
           type: 'bar',
-          barWidth: '10%',
+          barWidth,
           data: waterOutTemp,
           animationDuration,
           itemStyle: {
