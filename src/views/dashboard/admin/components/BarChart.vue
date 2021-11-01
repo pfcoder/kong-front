@@ -61,7 +61,7 @@ export default {
     },
 
     setOptions(chartData) {
-      const barWidth = '8%'
+      const barWidth = '10%'
       const names = []
       const oilTemp1 = []
       const oilTemp2 = []
@@ -69,15 +69,16 @@ export default {
       const oilTemp4 = []
       const waterInTemp = []
       const waterOutTemp = []
-      const data = chartData.data
+      const data = chartData.allRackStatus
       for (let i = 0; i < data.length; i++) {
-        names.push(data[i][0])
-        oilTemp1.push(data[i][1])
-        oilTemp2.push(data[i][2])
-        oilTemp3.push(data[i][3])
-        oilTemp4.push(data[i][4])
-        waterInTemp.push(data[i][5])
-        waterOutTemp.push(data[i][6])
+        const item = data[i]
+        names.push(item.name)
+        oilTemp1.push(item.registerStatusMap['油温1'].value)
+        oilTemp2.push(item.registerStatusMap['油温2'].value)
+        oilTemp3.push(item.registerStatusMap['油温3'].value)
+        oilTemp4.push(item.registerStatusMap['油温4'].value)
+        waterInTemp.push(item.registerStatusMap['入水温度'].value)
+        waterOutTemp.push(item.registerStatusMap['出水温度'].value)
       }
 
       this.chart.setOption({

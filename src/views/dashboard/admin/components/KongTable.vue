@@ -2,45 +2,45 @@
   <el-table :data="list" style="width: 100%;padding-top: 15px;">
     <el-table-column label="机柜代码">
       <template slot-scope="scope">
-        {{ scope.row.kong_id }}
+        {{ scope.row.name }}
       </template>
     </el-table-column>
     <el-table-column label="油温1" align="center">
       <template slot-scope="scope">
-        <el-tag :type="scope.row.oil1 | oilTempFilter">
-          {{ scope.row.oil1 }}°C
+        <el-tag :type="scope.row.registerStatusMap['油温1'].value | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温1'].value }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温2" align="center">
       <template slot-scope="scope">
-        <el-tag :type="scope.row.oil2 | oilTempFilter">
-          {{ scope.row.oil2 }}°C
+        <el-tag :type="scope.row.registerStatusMap['油温2'].value | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温2'].value }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温3" align="center">
       <template slot-scope="scope">
-        <el-tag :type="scope.row.oil3 | oilTempFilter">
-          {{ scope.row.oil3 }}°C
+        <el-tag :type="scope.row.registerStatusMap['油温3'].value | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温1'].value }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温4" align="center">
       <template slot-scope="scope">
-        <el-tag :type="scope.row.oil4 | oilTempFilter">
-          {{ scope.row.oil4 }}°C
+        <el-tag :type="scope.row.registerStatusMap['油温4'].value | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温4'].value }}°C
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column label="回水温度" align="center">
+    <el-table-column label="入水温度" align="center">
       <template slot-scope="scope">
-        {{ scope.row.w_in }}°C
+        {{ scope.row.registerStatusMap['入水温度'].value }}°C
       </template>
     </el-table-column>
     <el-table-column label="出水温度" align="center">
       <template slot-scope="scope">
-        {{ scope.row.w_out }}°C
+        {{ scope.row.registerStatusMap['出水温度'].value }}°C
       </template>
     </el-table-column>
     <el-table-column label="电流" align="center">
@@ -97,49 +97,7 @@ export default {
   methods: {
     setList(listData) {
       // TODO convert listData
-      this.list = [{
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }, {
-        kong_id: 'TA08',
-        oil1: '37',
-        oil2: '40',
-        oil3: '45',
-        oil4: '55'
-      }]
+      this.list = listData.allRackStatus
     }
   }
 }
