@@ -16,7 +16,7 @@ export function getTemperatures(params) {
   }) */
   console.log('getTemperatures api')
   return request({
-    url: '/monitor/rack/dbstatus?name=serial1',
+    url: 'http://36.250.0.19:8094/monitor/rack/dbstatus',
     method: 'get',
     params
   })
