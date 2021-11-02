@@ -21,16 +21,6 @@
 import BarChart from './components/BarChart'
 import KongTable from './components/KongTable'
 import { getTemperatures } from '@/api/kong'
-
-/*
-var tempTestData = {
-  data: [
-    ['T1', 35, 40, 41, 42, 30, 35], ['T2', 33, 32, 43, 35, 50, 30, 38], ['T3', 33, 32, 43, 35, 50, 30, 38],
-    ['T4', 35, 40, 41, 42, 30, 35], ['T5', 33, 32, 43, 35, 50, 30, 38], ['T6', 33, 32, 43, 35, 50, 30, 38], ['T7', 33, 32, 43, 35, 50, 30, 38]
-  ],
-  time: '2021-10-12T12:02:34'
-}*/
-
 export default {
   name: 'DashboardAdmin',
   components: {
@@ -46,7 +36,17 @@ export default {
     }
   },
   mounted() {
+    this.fetch_data()
     this.timer = setInterval(() => {
+      this.fetch_data()
+      console.log('timer reach')
+    }, 30000)
+  },
+  beforeDestroy() {
+    clearInterval(this.timer)
+  },
+  methods: {
+    fetch_data() {
       getTemperatures().then(res => {
         console.log('res:', res)
         this.kongTemperatureData = {
@@ -54,12 +54,7 @@ export default {
           time: new Date().toString()
         }
       })
-
-      console.log('timer reach')
-    }, 10000)
-  },
-  beforeDestroy() {
-    clearInterval(this.timer)
+    }
   }
 }
 </script>

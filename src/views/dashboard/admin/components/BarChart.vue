@@ -3,6 +3,7 @@
 </template>
 
 <script>
+import moment from 'moment'
 import echarts from 'echarts'
 require('echarts/theme/macarons') // echarts theme
 import resize from './mixins/resize'
@@ -84,7 +85,7 @@ export default {
       this.chart.setOption({
         title: {
           text: '机柜温度监控数据',
-          subtext: chartData.time,
+          subtext: moment(chartData.time).format('YYYY/MM/DD HH:mm:ss'),
           y: 'top'
         },
         tooltip: {
