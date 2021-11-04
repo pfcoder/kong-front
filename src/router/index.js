@@ -49,10 +49,23 @@ export const constantRoutes = [
     redirect: '/dashboard',
     children: [{
       path: 'dashboard',
-      name: 'Dashboard',
+      name: '他拉',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: 'Dashboard', icon: 'dashboard' }
+      meta: { title: '他拉', icon: 'dashboard', affix: true }
     }]
+  },
+
+  {
+    path: '/tianjun',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/tianjun/index'),
+        name: '天峻',
+        meta: { title: '天峻', icon: 'dashboard', affix: true }
+      }
+    ]
   },
 
   // 404 page must be placed at the end !!!

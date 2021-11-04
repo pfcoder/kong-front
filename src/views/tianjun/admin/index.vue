@@ -22,7 +22,7 @@ import BarChart from './components/BarChart'
 import KongTable from './components/KongTable'
 import { getTemperatures } from '@/api/kong'
 export default {
-  name: 'DashboardAdmin',
+  name: 'TianJun',
   components: {
     BarChart,
     KongTable
@@ -47,13 +47,55 @@ export default {
   },
   methods: {
     fetch_data() {
-      getTemperatures('tala').then(res => {
+      getTemperatures('tianjun').then(res => {
         console.log('res:', res)
-        this.kongTemperatureData = {
-          allRackStatus: res.data.allRackStatus,
-          time: new Date().toString()
-        }
+        this.kongTemperatureData = this.process_data(res.data.allRackStatus[0].registerStatusMap)
       })
+    },
+
+    process_data(data) {
+      /* const NAME_REG = /(.*)(回|供|-)/
+      const OIL_REG = /(.*)-(\d)#温度/
+      const WATER_IN_REG = /回水温度$/
+      const WATER_OUT_REG = /供水温度$/*/
+
+      const REG = /(.*)(-|供|回)((\d)#|水)温度$/
+
+      const map = {}
+      for (var key in data) {
+        const item = data[key]
+
+        // parser key
+        // TA08-1#温度
+        // TA11回水温度
+        // TA12供水温度
+        const check = key.match(REG)
+        if (!check) {
+          console.error('unknown key:', key)
+          continue
+        }
+        const name = check[1]
+        if (!map[name]) {
+          map[name] = {
+            oil: [0, 0, 0, 0], // 1, 2, 3, 4
+            water: [0, 0], // in out
+            time: item.createdAt
+          }
+        }
+
+        // check oil temp
+        if (check[2] === '-') {
+          map[name].oil[Number(check[4]) - 1] = item.value
+        } else if (check[2] === '供') {
+          // water check
+          map[name].water[0] = item.value
+        } else if (check[2] === '回') {
+          map[name].water[1] = item.value
+        }
+      }
+
+      console.log('map:', map)
+      return map
     }
   }
 }

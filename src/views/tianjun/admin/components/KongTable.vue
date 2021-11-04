@@ -7,48 +7,48 @@
     </el-table-column>
     <el-table-column label="采集时间">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['油温1'].createdAt | timeProcess }}
+        {{ scope.row.time | timeProcess }}
       </template>
     </el-table-column>
     <el-table-column label="油温1" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温1'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温1'].value }}°C
+        <el-tag :hit="true" :type="scope.row.oil[0] | oilTempFilter">
+          {{ scope.row.oil[0] }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温2" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温2'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温2'].value }}°C
+        <el-tag :hit="true" :type="scope.row.oil[1] | oilTempFilter">
+          {{ scope.row.oil[1] }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温3" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温3'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温3'].value }}°C
+        <el-tag :hit="true" :type="scope.row.oil[2] | oilTempFilter">
+          {{ scope.row.oil[2] }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温4" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温4'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温4'].value }}°C
+        <el-tag :hit="true" :type="scope.row.oil[3] | oilTempFilter">
+          {{ scope.row.oil[3] }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="入水温度" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['入水温度'].value | waterInTempFilter">
-          {{ scope.row.registerStatusMap['入水温度'].value }}°C
+        <el-tag :hit="true" :type="scope.row.water[0] | waterInTempFilter">
+          {{ scope.row.water[0] }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="出水温度" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['出水温度'].value | waterOutTempFilter">
-          {{ scope.row.registerStatusMap['出水温度'].value }}°C
+        <el-tag :hit="true" :type="scope.row.water[1] | waterOutTempFilter">
+          {{ scope.row.water[1] }}°C
         </el-tag>
       </template>
     </el-table-column>
@@ -73,7 +73,7 @@ export default {
     oilTempFilter(temp) {
       if (Number(temp) > 50) {
         return 'danger'
-      } else if (Number(temp) === 0) {
+      } else if (Number(temp) <= 0) {
         return 'warning'
       } else {
         return 'success'
@@ -82,7 +82,7 @@ export default {
     waterInTempFilter(temp) {
       if (Number(temp) > 35) {
         return 'danger'
-      } else if (Number(temp) === 0) {
+      } else if (Number(temp) <= 0) {
         return 'warning'
       } else {
         return 'success'
@@ -91,7 +91,7 @@ export default {
     waterOutTempFilter(temp) {
       if (Number(temp) > 45) {
         return 'danger'
-      } else if (Number(temp) === 0) {
+      } else if (Number(temp) <= 0) {
         return 'warning'
       } else {
         return 'success'
@@ -117,7 +117,18 @@ export default {
       deep: true,
       handler(val) {
         console.log('table update:', val)
-        this.setList(val)
+        const list = []
+        for (const key in val) {
+          const item = val[key]
+          list.push({
+            name: key,
+            time: item.time,
+            oil: item.oil,
+            water: item.water
+          })
+        }
+        console.log('list:', list)
+        this.setList(list)
       }
     }
   },
@@ -127,7 +138,7 @@ export default {
   methods: {
     setList(listData) {
       // TODO convert listData
-      this.list = listData.allRackStatus
+      this.list = listData
     }
   }
 }

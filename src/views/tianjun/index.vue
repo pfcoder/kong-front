@@ -9,7 +9,7 @@ import { mapGetters } from 'vuex'
 import adminDashboard from './admin'
 
 export default {
-  name: 'TaLa',
+  name: 'TianJun',
   components: { adminDashboard },
   data() {
     return {
