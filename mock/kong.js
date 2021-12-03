@@ -54,11 +54,11 @@ const data = Mock.mock({
       'registerStatusMap': {
         '入水温度': {
           'type': 'temperature',
-          'value': 0,
+          'value': 31,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.94+08:00'
+          'createdAt': '2021-12-03T22:58:21.11+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -66,39 +66,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.394+08:00'
+          'createdAt': '2021-12-03T22:58:20.631+08:00'
         },
-        '油温1': {
-          'type': 'temperature',
-          'value': 46,
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 34.1,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.38+08:00'
+          'createdAt': '2021-12-03T22:58:24.641+08:00'
         },
-        '油温2': {
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 33.69,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:25.06+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 30.92,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:25.501+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.35,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:23.342+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 246.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:23.76+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.48000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:24.19+08:00'
+        },
+        '油温1': {
           'type': 'temperature',
           'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.811+08:00'
+          'createdAt': '2021-12-03T22:58:21.58+08:00'
         },
-        '油温3': {
+        '油温2': {
           'type': 'temperature',
-          'value': 44,
+          'value': 47,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:11.24+08:00'
+          'createdAt': '2021-12-03T22:58:22.05+08:00'
         },
-        '油温4': {
+        '油温3': {
           'type': 'temperature',
           'value': 49,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:11.67+08:00'
+          'createdAt': '2021-12-03T22:58:22.502+08:00'
+        },
+        '油温4': {
+          'type': 'temperature',
+          'value': 55,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:22.921+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:26.341+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.4,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:25.91+08:00'
         }
       }
     },
@@ -112,7 +176,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.342+08:00'
+          'createdAt': '2021-12-03T22:58:09.73+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -120,39 +184,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.782+08:00'
+          'createdAt': '2021-12-03T22:58:09.28+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 33.96,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.582+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 31.28,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.058+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 38.27,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.55+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.72,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.18+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 246.38,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.661+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.43,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.14+08:00'
         },
         '油温1': {
           'type': 'temperature',
-          'value': 59,
-          'status': 'status warning',
+          'value': 54,
+          'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.78+08:00'
+          'createdAt': '2021-12-03T22:58:10.16+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 42,
+          'value': 43,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.203+08:00'
+          'createdAt': '2021-12-03T22:58:10.624+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 44,
+          'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.65+08:00'
+          'createdAt': '2021-12-03T22:58:11.11+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 44,
+          'value': 46,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.11+08:00'
+          'createdAt': '2021-12-03T22:58:11.668+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.562+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.6,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.07+08:00'
         }
       }
     },
@@ -166,7 +294,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:58.941+08:00'
+          'createdAt': '2021-12-03T22:58:10.981+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -174,7 +302,55 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:58.461+08:00'
+          'createdAt': '2021-12-03T22:58:10.536+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 35.37,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.55+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 38.28,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.99+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 35.46,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.41+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.08,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.2+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.62+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.08,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.068+08:00'
         },
         '油温1': {
           'type': 'temperature',
@@ -182,31 +358,47 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:59.371+08:00'
+          'createdAt': '2021-12-03T22:58:11.42+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 40,
+          'value': 42,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:59.82+08:00'
+          'createdAt': '2021-12-03T22:58:11.87+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 48,
+          'value': 49,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:00.311+08:00'
+          'createdAt': '2021-12-03T22:58:12.311+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 45,
+          'value': 46,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:00.762+08:00'
+          'createdAt': '2021-12-03T22:58:12.76+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:16.33+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.871+08:00'
         }
       }
     },
@@ -220,7 +412,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:01.772+08:00'
+          'createdAt': '2021-12-03T22:58:17.9+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -228,39 +420,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:01.291+08:00'
+          'createdAt': '2021-12-03T22:58:17.443+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 39.63,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.4+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 38.15,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.87+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 40.13,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:22.29+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.11,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:20.07+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:20.49+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:20.93+08:00'
         },
         '油温1': {
           'type': 'temperature',
-          'value': 40,
+          'value': 43,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:02.181+08:00'
+          'createdAt': '2021-12-03T22:58:18.338+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 42,
+          'value': 43,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:02.632+08:00'
+          'createdAt': '2021-12-03T22:58:18.798+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 46,
+          'value': 47,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:03.09+08:00'
+          'createdAt': '2021-12-03T22:58:19.24+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 44,
+          'value': 47,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:03.591+08:00'
+          'createdAt': '2021-12-03T22:58:19.661+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.22,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:23.182+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 248.9,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:22.731+08:00'
         }
       }
     },
@@ -274,31 +530,79 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:02.55+08:00'
+          'createdAt': '2021-12-03T22:58:08.9+08:00'
         },
         '出水温度': {
           'type': 'temperature',
-          'value': 36,
+          'value': 37,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:02.12+08:00'
+          'createdAt': '2021-12-03T22:58:08.435+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 36.35,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.639+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 34.230000000000004,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.1+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 28.17,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.53+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.08,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:11.16+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.38,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:11.668+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.33,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.13+08:00'
         },
         '油温1': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:03.001+08:00'
+          'createdAt': '2021-12-03T22:58:09.332+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 39,
+          'value': 40,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:03.499+08:00'
+          'createdAt': '2021-12-03T22:58:09.802+08:00'
         },
         '油温3': {
           'type': 'temperature',
@@ -306,15 +610,31 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:03.991+08:00'
+          'createdAt': '2021-12-03T22:58:10.24+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 45,
+          'value': 49,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.501+08:00'
+          'createdAt': '2021-12-03T22:58:10.69+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.0100000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.481+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.20000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:13.971+08:00'
         }
       }
     },
@@ -324,11 +644,11 @@ const data = Mock.mock({
       'registerStatusMap': {
         '入水温度': {
           'type': 'temperature',
-          'value': 32,
+          'value': 31,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.769+08:00'
+          'createdAt': '2021-12-03T22:58:07+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -336,39 +656,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.3+08:00'
+          'createdAt': '2021-12-03T22:58:06.531+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 43.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:10.62+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 32.69,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:11.11+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 35.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:11.936+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:09.251+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.59,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:09.73+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.36,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:10.16+08:00'
         },
         '油温1': {
           'type': 'temperature',
-          'value': 44,
+          'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.201+08:00'
+          'createdAt': '2021-12-03T22:58:07.439+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 41,
+          'value': 42,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.632+08:00'
+          'createdAt': '2021-12-03T22:58:07.9+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 44,
+          'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.101+08:00'
+          'createdAt': '2021-12-03T22:58:08.347+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 46,
+          'value': 48,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.54+08:00'
+          'createdAt': '2021-12-03T22:58:08.83+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.19,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.9+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 248.9,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.39+08:00'
         }
       }
     },
@@ -382,15 +766,63 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.481+08:00'
+          'createdAt': '2021-12-03T22:57:56.271+08:00'
         },
         '出水温度': {
           'type': 'temperature',
-          'value': 37,
+          'value': 38,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.05+08:00'
+          'createdAt': '2021-12-03T22:57:55.85+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 43.09,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:57:59.68+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 39.64,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:00.141+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 33.87,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:00.68+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.16,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:57:58.431+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.5,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:57:58.84+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.3,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:57:59.25+08:00'
         },
         '油温1': {
           'type': 'temperature',
@@ -398,31 +830,47 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.021+08:00'
+          'createdAt': '2021-12-03T22:57:56.7+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 42,
+          'value': 43,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.5+08:00'
+          'createdAt': '2021-12-03T22:57:57.131+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 41,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.94+08:00'
+          'createdAt': '2021-12-03T22:57:57.58+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 47,
+          'value': 49,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:11.391+08:00'
+          'createdAt': '2021-12-03T22:57:58.03+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.09,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:01.631+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.20000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:01.14+08:00'
         }
       }
     },
@@ -436,7 +884,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.14+08:00'
+          'createdAt': '2021-12-03T22:58:12.441+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -444,15 +892,63 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.659+08:00'
+          'createdAt': '2021-12-03T22:58:11.99+08:00'
         },
-        '油温1': {
-          'type': 'temperature',
-          'value': 42,
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 33.43,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.631+08:00'
+          'createdAt': '2021-12-03T22:58:16.1+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 28.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:16.57+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 31.740000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:17.038+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.31,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:14.65+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.41,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.111+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.24,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.621+08:00'
+        },
+        '油温1': {
+          'type': 'temperature',
+          'value': 40,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:12.94+08:00'
         },
         '油温2': {
           'type': 'temperature',
@@ -460,23 +956,39 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.07+08:00'
+          'createdAt': '2021-12-03T22:58:13.381+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.53+08:00'
+          'createdAt': '2021-12-03T22:58:13.82+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 45,
+          'value': 46,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.059+08:00'
+          'createdAt': '2021-12-03T22:58:14.25+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.21,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:17.941+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.1,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:17.46+08:00'
         }
       }
     },
@@ -490,7 +1002,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.35+08:00'
+          'createdAt': '2021-12-03T22:58:02.59+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -498,39 +1010,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.959+08:00'
+          'createdAt': '2021-12-03T22:58:02.141+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 30.16,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:06.181+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 34.160000000000004,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:06.68+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 32.86,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:07.19+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.32,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:04.79+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.6,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:05.24+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.22,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:05.69+08:00'
         },
         '油温1': {
           'type': 'temperature',
-          'value': 42,
+          'value': 41,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.778+08:00'
+          'createdAt': '2021-12-03T22:58:03.018+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 47,
+          'value': 48,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.21+08:00'
+          'createdAt': '2021-12-03T22:58:03.442+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.631+08:00'
+          'createdAt': '2021-12-03T22:58:03.87+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 42,
+          'value': 41,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.09+08:00'
+          'createdAt': '2021-12-03T22:58:04.37+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.0700000000000003,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:08.09+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:07.65+08:00'
         }
       }
     },
@@ -544,15 +1120,63 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.701+08:00'
+          'createdAt': '2021-12-03T22:57:59.731+08:00'
         },
         '出水温度': {
           'type': 'temperature',
-          'value': 36,
+          'value': 37,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.271+08:00'
+          'createdAt': '2021-12-03T22:57:59.231+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 24.96,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:03.31+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 42.61,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:03.72+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 29.650000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:04.17+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.68,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:02.021+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 246.43,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:02.471+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.51000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:02.89+08:00'
         },
         '油温1': {
           'type': 'temperature',
@@ -560,31 +1184,47 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.14+08:00'
+          'createdAt': '2021-12-03T22:58:00.201+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 41,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.67+08:00'
+          'createdAt': '2021-12-03T22:58:00.68+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.21+08:00'
+          'createdAt': '2021-12-03T22:58:01.1+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 45,
+          'value': 46,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.71+08:00'
+          'createdAt': '2021-12-03T22:58:01.57+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 2.99,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:05.08+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.4,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:04.66+08:00'
         }
       }
     },
@@ -598,7 +1238,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.32+08:00'
+          'createdAt': '2021-12-03T22:58:16.38+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -606,15 +1246,63 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.908+08:00'
+          'createdAt': '2021-12-03T22:58:15.89+08:00'
         },
-        '油温1': {
-          'type': 'temperature',
-          'value': 41,
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 31.75,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:07.759+08:00'
+          'createdAt': '2021-12-03T22:58:20.065+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 31.46,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:20.56+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 33.64,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.026+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.25,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:18.767+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.26000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:19.202+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.31,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:19.649+08:00'
+        },
+        '油温1': {
+          'type': 'temperature',
+          'value': 42,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:16.941+08:00'
         },
         '油温2': {
           'type': 'temperature',
@@ -622,23 +1310,39 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.221+08:00'
+          'createdAt': '2021-12-03T22:58:17.37+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.67+08:00'
+          'createdAt': '2021-12-03T22:58:17.86+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 46,
+          'value': 48,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.158+08:00'
+          'createdAt': '2021-12-03T22:58:18.29+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.09,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.95+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.4,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.46+08:00'
         }
       }
     },
@@ -652,7 +1356,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.782+08:00'
+          'createdAt': '2021-12-03T22:58:03.865+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -660,7 +1364,55 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:04.333+08:00'
+          'createdAt': '2021-12-03T22:58:03.442+08:00'
+        },
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 40.37,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:07.581+08:00'
+        },
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 34.74,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:08.02+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 39.28,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:08.461+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.28,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:06.14+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.71,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:06.571+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.34,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:07.049+08:00'
         },
         '油温1': {
           'type': 'temperature',
@@ -668,31 +1420,47 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.319+08:00'
+          'createdAt': '2021-12-03T22:58:04.346+08:00'
         },
         '油温2': {
           'type': 'temperature',
-          'value': 41,
+          'value': 42,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:05.75+08:00'
+          'createdAt': '2021-12-03T22:58:04.78+08:00'
         },
         '油温3': {
           'type': 'temperature',
-          'value': 43,
+          'value': 44,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.17+08:00'
+          'createdAt': '2021-12-03T22:58:05.23+08:00'
         },
         '油温4': {
           'type': 'temperature',
-          'value': 43,
+          'value': 46,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:06.621+08:00'
+          'createdAt': '2021-12-03T22:58:05.682+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.06,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:09.37+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 248.9,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:08.94+08:00'
         }
       }
     },
@@ -706,7 +1474,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:09.391+08:00'
+          'createdAt': '2021-12-03T22:58:19.001+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -714,39 +1482,103 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:08.942+08:00'
+          'createdAt': '2021-12-03T22:58:18.511+08:00'
         },
-        '油温1': {
-          'type': 'temperature',
-          'value': 42,
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 27.580000000000002,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.021+08:00'
+          'createdAt': '2021-12-03T22:58:22.691+08:00'
         },
-        '油温2': {
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 33.84,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:23.12+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 28.5,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:23.65+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.46,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.251+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 246.07,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:21.726+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.32,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:22.171+08:00'
+        },
+        '油温1': {
           'type': 'temperature',
           'value': 41,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.45+08:00'
+          'createdAt': '2021-12-03T22:58:19.43+08:00'
         },
-        '油温3': {
+        '油温2': {
           'type': 'temperature',
-          'value': 46,
+          'value': 42,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:10.89+08:00'
+          'createdAt': '2021-12-03T22:58:19.84+08:00'
         },
-        '油温4': {
+        '油温3': {
           'type': 'temperature',
           'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:11.31+08:00'
+          'createdAt': '2021-12-03T22:58:20.28+08:00'
+        },
+        '油温4': {
+          'type': 'temperature',
+          'value': 47,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:20.77+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.02,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:24.641+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.20000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:24.141+08:00'
         }
       }
     },
@@ -760,7 +1592,7 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:59.451+08:00'
+          'createdAt': '2021-12-03T22:58:14.36+08:00'
         },
         '出水温度': {
           'type': 'temperature',
@@ -768,31 +1600,79 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:58.981+08:00'
+          'createdAt': '2021-12-03T22:58:13.94+08:00'
         },
-        '油温1': {
-          'type': 'temperature',
-          'value': 42,
+        '总动力-Ia': {
+          'type': 'electric-current-bkk1',
+          'value': 30.36,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:01:59.911+08:00'
+          'createdAt': '2021-12-03T22:58:18.09+08:00'
         },
-        '油温2': {
+        '总动力-Ib': {
+          'type': 'electric-current-bkk1',
+          'value': 32.15,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:18.541+08:00'
+        },
+        '总动力-Ic': {
+          'type': 'electric-current-bkk1',
+          'value': 32.03,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:19.04+08:00'
+        },
+        '总动力-Ua': {
+          'type': 'electric-voltage-bkk1',
+          'value': 249.51000000000002,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:16.651+08:00'
+        },
+        '总动力-Ub': {
+          'type': 'electric-voltage-bkk1',
+          'value': 246.16,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:17.12+08:00'
+        },
+        '总动力-Uc': {
+          'type': 'electric-voltage-bkk1',
+          'value': 248.59,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:17.64+08:00'
+        },
+        '油温1': {
           'type': 'temperature',
           'value': 41,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:00.451+08:00'
+          'createdAt': '2021-12-03T22:58:14.781+08:00'
         },
-        '油温3': {
+        '油温2': {
           'type': 'temperature',
-          'value': 42,
+          'value': 45,
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:00.912+08:00'
+          'createdAt': '2021-12-03T22:58:15.23+08:00'
+        },
+        '油温3': {
+          'type': 'temperature',
+          'value': 43,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:15.681+08:00'
         },
         '油温4': {
           'type': 'temperature',
@@ -800,7 +1680,23 @@ const data = Mock.mock({
           'status': 'status normal',
           'StatusAppearTimes': 0,
           'Alarm': '',
-          'createdAt': '2021-11-01T02:02:01.379+08:00'
+          'createdAt': '2021-12-03T22:58:16.181+08:00'
+        },
+        '辅助动力-Ia': {
+          'type': 'electric-current',
+          'value': 3.04,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:19.88+08:00'
+        },
+        '辅助动力-Ua': {
+          'type': 'electric-voltage',
+          'value': 249.3,
+          'status': 'status normal',
+          'StatusAppearTimes': 0,
+          'Alarm': '',
+          'createdAt': '2021-12-03T22:58:19.46+08:00'
         }
       }
     }

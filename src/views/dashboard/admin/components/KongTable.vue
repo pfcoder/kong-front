@@ -52,14 +52,44 @@
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column label="电流" align="center">
+    <el-table-column label="总动力-Ia" align="center">
       <template slot-scope="scope">
-        {{ scope.row.a }}A
+        {{ scope.row.registerStatusMap['总动力-Ia'].value.toFixed(2) }}
       </template>
     </el-table-column>
-    <el-table-column label="功率" align="center">
+    <el-table-column label="总动力-Ib" align="center">
       <template slot-scope="scope">
-        {{ scope.row.p }}KW
+        {{ scope.row.registerStatusMap['总动力-Ib'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="总动力-Ic" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['总动力-Ic'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="总动力-Ua" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['总动力-Ua'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="总动力-Ub" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['总动力-Ub'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="总动力-Uc" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['总动力-Uc'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="辅助动力-Ia" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['辅助动力-Ia'].value.toFixed(2) }}
+      </template>
+    </el-table-column>
+    <el-table-column label="辅助动力-Ua" align="center">
+      <template slot-scope="scope">
+        {{ scope.row.registerStatusMap['辅助动力-Ua'].value.toFixed(2) }}
       </template>
     </el-table-column>
   </el-table>

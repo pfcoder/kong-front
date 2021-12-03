@@ -5,7 +5,7 @@ import request from '@/utils/request'
 export function getTemperatures(params) {
   console.log('getTemperatures api:', params)
   return request({
-    url: `data/status-${params}.json`,
+    url: `http://c.earthledger.com:8090/data/status-${params}.json`,
     // url: `/monitor/rack/dbstatus/${params}`,
     method: 'get',
     params
