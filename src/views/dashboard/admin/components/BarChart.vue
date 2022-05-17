@@ -74,12 +74,16 @@ export default {
       for (let i = 0; i < data.length; i++) {
         const item = data[i]
         names.push(item.name)
-        oilTemp1.push(item.registerStatusMap['油温1'].value)
-        oilTemp2.push(item.registerStatusMap['油温2'].value)
-        oilTemp3.push(item.registerStatusMap['油温3'].value)
-        oilTemp4.push(item.registerStatusMap['油温4'].value)
-        waterInTemp.push(item.registerStatusMap['入水温度'].value)
-        waterOutTemp.push(item.registerStatusMap['出水温度'].value)
+        try {
+          oilTemp1.push(item.registerStatusMap['油温1'].value)
+          oilTemp2.push(item.registerStatusMap['油温2'].value)
+          oilTemp3.push(item.registerStatusMap['油温3'].value)
+          oilTemp4.push(item.registerStatusMap['油温4'].value)
+          waterInTemp.push(item.registerStatusMap['入水温度'].value)
+          waterOutTemp.push(item.registerStatusMap['出水温度'].value)
+        } catch (e) {
+          console.log('error parse object')
+        }
       }
 
       this.chart.setOption({

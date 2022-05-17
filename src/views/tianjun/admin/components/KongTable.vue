@@ -2,7 +2,9 @@
   <el-table :data="list" style="width: 100%;padding-top: 15px;">
     <el-table-column label="机柜代码">
       <template slot-scope="scope">
-        {{ scope.row.name }}
+        <router-link :to="'/chart/'+scope.row.name">
+          {{ scope.row.name }}
+        </router-link>
       </template>
     </el-table-column>
     <el-table-column label="采集时间">

@@ -7,89 +7,89 @@
     </el-table-column>
     <el-table-column label="采集时间">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['油温1'].createdAt | timeProcess }}
+        {{ scope.row.registerStatusMap['油温1'] ? scope.row.registerStatusMap['油温1'].createdAt : 0 | timeProcess }}
       </template>
     </el-table-column>
     <el-table-column label="油温1" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温1'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温1'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温1'] ? scope.row.registerStatusMap['油温1'].value : 0 | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温1'] ? scope.row.registerStatusMap['油温1'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温2" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温2'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温2'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温2'] ? scope.row.registerStatusMap['油温2'].value : 0 | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温2'] ? scope.row.registerStatusMap['油温2'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温3" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温3'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温3'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温3'] ? scope.row.registerStatusMap['油温3'].value : 0 | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温3'] ? scope.row.registerStatusMap['油温3'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="油温4" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温4'].value | oilTempFilter">
-          {{ scope.row.registerStatusMap['油温4'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['油温4'] ? scope.row.registerStatusMap['油温4'].value : 0 | oilTempFilter">
+          {{ scope.row.registerStatusMap['油温4'] ? scope.row.registerStatusMap['油温4'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="入水温度" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['入水温度'].value | waterInTempFilter">
-          {{ scope.row.registerStatusMap['入水温度'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['入水温度'] ? scope.row.registerStatusMap['入水温度'].value : 0 | waterInTempFilter">
+          {{ scope.row.registerStatusMap['入水温度'] ? scope.row.registerStatusMap['入水温度'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="出水温度" align="center">
       <template slot-scope="scope">
-        <el-tag :hit="true" :type="scope.row.registerStatusMap['出水温度'].value | waterOutTempFilter">
-          {{ scope.row.registerStatusMap['出水温度'].value }}°C
+        <el-tag :hit="true" :type="scope.row.registerStatusMap['出水温度'] ? scope.row.registerStatusMap['出水温度'].value : 0 | waterOutTempFilter">
+          {{ scope.row.registerStatusMap['出水温度'] ? scope.row.registerStatusMap['出水温度'].value : 0 }}°C
         </el-tag>
       </template>
     </el-table-column>
     <el-table-column label="总动力-Ia" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Ia'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Ia'] ? scope.row.registerStatusMap['总动力-Ia'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="总动力-Ib" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Ib'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Ib'] ? scope.row.registerStatusMap['总动力-Ib'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="总动力-Ic" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Ic'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Ic'] ? scope.row.registerStatusMap['总动力-Ic'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="总动力-Ua" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Ua'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Ua'] ? scope.row.registerStatusMap['总动力-Ua'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="总动力-Ub" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Ub'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Ub'] ? scope.row.registerStatusMap['总动力-Ub'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="总动力-Uc" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['总动力-Uc'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['总动力-Uc'] ? scope.row.registerStatusMap['总动力-Uc'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="辅助动力-Ia" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['辅助动力-Ia'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['辅助动力-Ia'] ? scope.row.registerStatusMap['辅助动力-Ia'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
     <el-table-column label="辅助动力-Ua" align="center">
       <template slot-scope="scope">
-        {{ scope.row.registerStatusMap['辅助动力-Ua'].value.toFixed(2) }}
+        {{ scope.row.registerStatusMap['辅助动力-Ua'] ? scope.row.registerStatusMap['辅助动力-Ua'].value.toFixed(2) : 0 }}
       </template>
     </el-table-column>
   </el-table>

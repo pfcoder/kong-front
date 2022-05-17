@@ -43,7 +43,7 @@ export const constantRoutes = [
     hidden: true
   },
 
-  {
+  /* {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
@@ -53,17 +53,25 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       meta: { title: '他拉', icon: 'dashboard', affix: true }
     }]
-  },
+  },*/
 
   {
-    path: '/tianjun',
+    path: '/',
     component: Layout,
+    redirect: '/list',
     children: [
       {
-        path: 'index',
+        path: 'list',
         component: () => import('@/views/tianjun/index'),
         name: '天峻',
         meta: { title: '天峻', icon: 'dashboard', affix: true }
+      },
+      {
+        path: 'chart/:rack_id',
+        component: () => import('@/views/tianjun/history/chart'),
+        name: 'RackHistoryChart',
+        meta: { title: 'Rack Temp History Chart', noCache: true },
+        hidden: true
       }
     ]
   },
