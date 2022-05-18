@@ -7,6 +7,7 @@
 <script>
 import echarts from 'echarts'
 import resize from './mixins/resize'
+import { getRackHistory } from '@/api/kong'
 
 export default {
   mixins: [resize],
@@ -53,6 +54,7 @@ export default {
   },
   mounted() {
     console.log(this.$route.params.rack_id, this.timeRange)
+    this.rebuildData()
     this.initChart()
   },
   beforeDestroy() {
@@ -63,9 +65,40 @@ export default {
     this.chart = null
   },
   methods: {
-    rebuildData() {
-      // compute x axis
+    buildXAxis(period, steps) {
+      const format2h = (d) => d.getHours() + ':' + d.getMinutes()
+      const format24h = (d) => d.getDay() + ' ' + d.getHours() + ':' + d.getMinutes()
+      const format7d = (d) => `${d.getMonth() + 1}-${d.getDay()}`
+
       const xAxis = []
+      const end = new Date()
+      let start
+      let formatDate = format2h
+      switch (period) {
+        case '2h':
+          start = new Date(end.getTime() - 2 * 60 * 60 * 1000)
+          formatDate = format2h
+          break
+        case '24h':
+          start = new Date(end.getTime() - 24 * 60 * 60 * 1000)
+          formatDate = format24h
+          break
+        case '7d':
+          start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000)
+          formatDate = format7d
+          break
+      }
+
+      const step = (end.getTime() - start.getTime()) / steps
+
+      for (var i = 0; i < steps; i++) {
+        const d = new Date(start.getTime() + i * step)
+        xAxis.push(formatDate(d))
+      }
+
+      return xAxis
+    },
+    rebuildData() {
       // parser time range
       const reg = /(\d+)(h|d)/i
       const res = this.timeRange.match(reg)
@@ -74,11 +107,20 @@ export default {
         return
       }
 
+      let period = res[1]
       if (res[2] === 'd' || res[2] === 'D') {
         // days
+        period += 'd'
       } else {
         // hours
+        period += 'h'
       }
+
+      console.log('period:', period)
+      // request data
+      getRackHistory(this.$route.params.rack_id, period).then(res => {
+        console.log('res:', res)
+      })
     },
     initChart() {
       this.chart = echarts.init(document.getElementById(this.id))
