@@ -1,8 +1,12 @@
 <template>
-  <el-table :data="list" style="width: 100%;padding-top: 15px;">
+  <el-table
+    :data="list"
+    style="width: 100%; padding-top: 15px"
+    @row-click="openHistory"
+  >
     <el-table-column label="机柜代码">
       <template slot-scope="scope">
-        <router-link :to="'/chart/'+scope.row.name">
+        <router-link :to="'/chart/' + scope.row.name">
           {{ scope.row.name }}
         </router-link>
       </template>
@@ -55,84 +59,80 @@
       </template>
     </el-table-column>
     <el-table-column label="电流" align="center">
-      <template slot-scope="scope">
-        {{ scope.row.a }}A
-      </template>
+      <template slot-scope="scope"> {{ scope.row.a }}A </template>
     </el-table-column>
     <el-table-column label="功率" align="center">
-      <template slot-scope="scope">
-        {{ scope.row.p }}KW
-      </template>
+      <template slot-scope="scope"> {{ scope.row.p }}KW </template>
     </el-table-column>
   </el-table>
 </template>
 
 <script>
-import moment from 'moment'
+import moment from "moment";
 
 export default {
   filters: {
     oilTempFilter(temp) {
       if (Number(temp) > 50) {
-        return 'danger'
+        return "danger";
       } else if (Number(temp) <= 0) {
-        return 'warning'
+        return "warning";
       } else {
-        return 'success'
+        return "success";
       }
     },
     waterInTempFilter(temp) {
       if (Number(temp) > 35) {
-        return 'danger'
+        return "danger";
       } else if (Number(temp) <= 0) {
-        return 'warning'
+        return "warning";
       } else {
-        return 'success'
+        return "success";
       }
     },
     waterOutTempFilter(temp) {
       if (Number(temp) > 45) {
-        return 'danger'
+        return "danger";
       } else if (Number(temp) <= 0) {
-        return 'warning'
+        return "warning";
       } else {
-        return 'success'
+        return "success";
       }
     },
     timeProcess(time) {
-      return moment(time).format('HH:mm:ss')
-    }
+      return moment(time).format("HH:mm:ss");
+    },
   },
   props: {
     tableData: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   data() {
     return {
-      list: null
-    }
+      list: null,
+    };
   },
   watch: {
     tableData: {
       deep: true,
       handler(val) {
-        console.log('table update:', val)
-        const list = []
+        console.log("table update:", val);
+        const list = [];
         for (const key in val) {
-          const item = val[key]
+          const item = val[key];
           list.push({
             name: key,
             time: item.time,
             oil: item.oil,
-            water: item.water
-          })
+            water: item.water,
+          });
         }
-        console.log('list:', list)
-        this.setList(list)
-      }
-    }
+        console.log("list:", list);
+        this.setList(list);
+      },
+    },
   },
   created() {
     // this.fetchData()
@@ -140,8 +140,11 @@ export default {
   methods: {
     setList(listData) {
       // TODO convert listData
-      this.list = listData
-    }
-  }
-}
+      this.list = listData;
+    },
+    openHistory(row) {
+      this.$router.push({ path: "/chart/" + row.name });
+    },
+  },
+};
 </script>
