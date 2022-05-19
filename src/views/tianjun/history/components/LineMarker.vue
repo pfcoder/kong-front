@@ -1,37 +1,36 @@
 <template>
   <!--<div>Hello</div>-->
-  <div :id="id" :class="className" :style="{height:height,width:width}" />
-
+  <div :id="id" :class="className" :style="{ height: height, width: width }" />
 </template>
 
 <script>
-import echarts from 'echarts'
-import resize from './mixins/resize'
-import { getRackHistory } from '@/api/kong'
+import echarts from "echarts";
+import resize from "./mixins/resize";
+import { getRackHistory } from "@/api/kong";
 
 export default {
   mixins: [resize],
   props: {
     className: {
       type: String,
-      default: 'chart'
+      default: "chart",
     },
     id: {
       type: String,
-      default: 'chart'
+      default: "chart",
     },
     width: {
       type: String,
-      default: '200px'
+      default: "200px",
     },
     height: {
       type: String,
-      default: '200px'
+      default: "200px",
     },
     timeRange: {
       type: String,
-      default: '2h'
-    }
+      default: "2h",
+    },
   },
   data() {
     return {
@@ -39,269 +38,331 @@ export default {
       // time selection, default 2 hours
       startTime: null,
       endTime: null,
-      chartData: {
-
-      }
-    }
+      chartData: null,
+    };
   },
   watch: {
     timeRange(val, oldval) {
-      console.log('timeRange change:', val, oldval)
-    }
+      console.log("timeRange change:", val, oldval);
+      this.rebuildData();
+    },
   },
   created() {
-    console.log('chart created')
+    console.log("chart created");
   },
   mounted() {
-    console.log(this.$route.params.rack_id, this.timeRange)
-    this.rebuildData()
-    this.initChart()
+    console.log(this.$route.params.rack_id, this.timeRange);
+    this.initChart();
+    this.rebuildData();
   },
   beforeDestroy() {
     if (!this.chart) {
-      return
+      return;
     }
-    this.chart.dispose()
-    this.chart = null
+    this.chart.dispose();
+    this.chart = null;
   },
   methods: {
-    buildXAxis(period, steps) {
-      const format2h = (d) => d.getHours() + ':' + d.getMinutes()
-      const format24h = (d) => d.getDay() + ' ' + d.getHours() + ':' + d.getMinutes()
-      const format7d = (d) => `${d.getMonth() + 1}-${d.getDay()}`
+    buildXY(period, steps, data) {
+      const format2h = (d) => d.getHours() + ":" + d.getMinutes();
+      const format24h = (d) =>
+        `${d.getMonth() + 1}-${d.getDate()} ${d.getHours()}:${d.getMinutes()}`;
+      const format7d = (d) =>
+        `${d.getMonth() + 1}-${d.getDate()} ${d.getHours()}:${d.getMinutes()}`;
 
-      const xAxis = []
-      const end = new Date()
-      let start
-      let formatDate = format2h
+      let xData = [];
+      // 1,2,3,4,in,out
+      let yData = [[], [], [], [], [], []];
+      const end = new Date();
+      let start;
+      let formatDate = format2h;
       switch (period) {
-        case '2h':
-          start = new Date(end.getTime() - 2 * 60 * 60 * 1000)
-          formatDate = format2h
-          break
-        case '24h':
-          start = new Date(end.getTime() - 24 * 60 * 60 * 1000)
-          formatDate = format24h
-          break
-        case '7d':
-          start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000)
-          formatDate = format7d
-          break
+        case "2h":
+          start = new Date(end.getTime() - 2 * 60 * 60 * 1000);
+          formatDate = format2h;
+          break;
+        case "24h":
+          start = new Date(end.getTime() - 24 * 60 * 60 * 1000);
+          formatDate = format24h;
+          break;
+        case "7d":
+          start = new Date(end.getTime() - 7 * 24 * 60 * 60 * 1000);
+          formatDate = format7d;
+          break;
       }
 
-      const step = (end.getTime() - start.getTime()) / steps
+      let xStep = (end.getTime() - start.getTime()) / steps;
 
       for (var i = 0; i < steps; i++) {
-        const d = new Date(start.getTime() + i * step)
-        xAxis.push(formatDate(d))
+        const d = new Date(start.getTime() + i * xStep);
+        xData.push(formatDate(d));
+        for (var j = 0; j < yData.length; j++) {
+          let yStep = data[j].data.length / steps;
+          let index = Math.min(Math.floor(i * yStep), data[j].data.length - 1);
+          let item = data[j].data[index];
+          yData[j].push(item);
+        }
       }
 
-      return xAxis
+      return {
+        x: xData,
+        y: yData,
+      };
     },
     rebuildData() {
+      this.chart && this.chart.showLoading();
       // parser time range
-      const reg = /(\d+)(h|d)/i
-      const res = this.timeRange.match(reg)
+      const reg = /(\d+)(h|d)/i;
+      const res = this.timeRange.match(reg);
       if (!res) {
-        console.error('timeRange format error:', this.timeRange)
-        return
+        console.error("timeRange format error:", this.timeRange);
+        return;
       }
 
-      let period = res[1]
-      if (res[2] === 'd' || res[2] === 'D') {
+      let period = res[1];
+      if (res[2] === "d" || res[2] === "D") {
         // days
-        period += 'd'
+        period += "d";
       } else {
         // hours
-        period += 'h'
+        period += "h";
       }
 
-      console.log('period:', period)
+      console.log("period:", period);
       // request data
-      getRackHistory(this.$route.params.rack_id, period).then(res => {
-        console.log('res:', res)
-      })
+      getRackHistory(this.$route.params.rack_id, period).then((res) => {
+        console.log("res:", res);
+        // 1,2,3,4,供水，回水
+        this.chartData = this.buildXY(period, 20, res);
+        console.log("chartData:", this.chartData);
+        this.chart.hideLoading();
+        this.updateChart();
+      });
     },
     initChart() {
-      this.chart = echarts.init(document.getElementById(this.id))
-
+      this.chart = echarts.init(document.getElementById(this.id));
+    },
+    updateChart() {
+      console.log("charData:", this.chartData);
       this.chart.setOption({
-        backgroundColor: 'white',
+        backgroundColor: "white",
         title: {
           top: 20,
-          text: '机柜温度历史数据',
+          text: `机柜：${this.$route.params.rack_id} 历史温度`,
           textStyle: {
-            fontWeight: 'normal',
+            fontWeight: "normal",
             fontSize: 16,
-            color: 'grey'
+            color: "grey",
           },
-          left: '1%'
+          left: "1%",
         },
         tooltip: {
-          trigger: 'axis',
+          trigger: "axis",
           axisPointer: {
             lineStyle: {
-              color: '#57617B'
-            }
-          }
+              color: "#57617B",
+            },
+          },
         },
         legend: {
           top: 20,
-          icon: 'rect',
+          icon: "rect",
           itemWidth: 14,
           itemHeight: 5,
           itemGap: 13,
-          data: ['CMCC', 'CTCC', 'CUCC'],
-          right: '4%',
+          data: ["1#", "2#", "3#", "4#", "供水", "回水"],
+          right: "4%",
           textStyle: {
             fontSize: 12,
-            color: '#F1F1F3'
-          }
+            color: "grey",
+          },
         },
         grid: {
           top: 100,
-          left: '2%',
-          right: '2%',
-          bottom: '2%',
-          containLabel: true
+          left: "2%",
+          right: "2%",
+          bottom: "2%",
+          containLabel: true,
         },
-        xAxis: [{
-          type: 'category',
-          boundaryGap: false,
-          axisLine: {
+        xAxis: [
+          {
+            type: "category",
+            boundaryGap: false,
+            axisLine: {
+              lineStyle: {
+                color: "#57617B",
+              },
+            },
+            data: this.chartData.x,
+          },
+        ],
+        yAxis: [
+          {
+            type: "value",
+            name: "(C)",
+            axisTick: {
+              show: true,
+            },
+            axisLine: {
+              lineStyle: {
+                color: "#57617B",
+              },
+            },
+            axisLabel: {
+              margin: 10,
+              textStyle: {
+                fontSize: 14,
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: "grey",
+                type: "dashed",
+              },
+            },
+          },
+        ],
+        series: [
+          {
+            name: "1#",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
             lineStyle: {
-              color: '#57617B'
-            }
+              normal: {
+                width: 2,
+                color: "#CC3399",
+              },
+            },
+            itemStyle: {
+              normal: {
+                color: "#CC3399",
+                borderColor: "#CC3399",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[0],
           },
-          data: ['13:00', '13:05', '13:10', '13:15', '13:20', '13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55']
-        }],
-        yAxis: [{
-          type: 'value',
-          name: '(%)',
-          axisTick: {
-            show: false
-          },
-          axisLine: {
+          {
+            name: "2#",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
             lineStyle: {
-              color: '#57617B'
-            }
-          },
-          axisLabel: {
-            margin: 10,
-            textStyle: {
-              fontSize: 14
-            }
-          },
-          splitLine: {
-            lineStyle: {
-              color: '#57617B'
-            }
-          }
-        }],
-        series: [{
-          name: 'CMCC',
-          type: 'line',
-          smooth: true,
-          symbol: 'circle',
-          symbolSize: 5,
-          showSymbol: false,
-          lineStyle: {
-            normal: {
-              width: 1
-            }
-          },
-          areaStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                offset: 0,
-                color: 'rgba(137, 189, 27, 0.3)'
-              }, {
-                offset: 0.8,
-                color: 'rgba(137, 189, 27, 0)'
-              }], false),
-              shadowColor: 'rgba(0, 0, 0, 0.1)',
-              shadowBlur: 10
-            }
-          },
-          itemStyle: {
-            normal: {
-              color: 'rgb(137,189,27)',
-              borderColor: 'rgba(137,189,2,0.27)',
-              borderWidth: 12
+              normal: {
+                width: 2,
+                color: "#9933CC",
+              },
+            },
 
-            }
+            itemStyle: {
+              normal: {
+                color: "#9933CC",
+                borderColor: "#9933CC",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[1],
           },
-          data: [220, 182, 191, 134, 150, 120, 110, 125, 145, 122, 165, 122]
-        }, {
-          name: 'CTCC',
-          type: 'line',
-          smooth: true,
-          symbol: 'circle',
-          symbolSize: 5,
-          showSymbol: false,
-          lineStyle: {
-            normal: {
-              width: 1
-            }
-          },
-          areaStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                offset: 0,
-                color: 'rgba(0, 136, 212, 0.3)'
-              }, {
-                offset: 0.8,
-                color: 'rgba(0, 136, 212, 0)'
-              }], false),
-              shadowColor: 'rgba(0, 0, 0, 0.1)',
-              shadowBlur: 10
-            }
-          },
-          itemStyle: {
-            normal: {
-              color: 'rgb(0,136,212)',
-              borderColor: 'rgba(0,136,212,0.2)',
-              borderWidth: 12
+          {
+            name: "3#",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 2,
+                color: "#CC99CC",
+              },
+            },
 
-            }
+            itemStyle: {
+              normal: {
+                color: "#CC99CC",
+                borderColor: "#CC99CC",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[2],
           },
-          data: [120, 110, 125, 145, 122, 165, 122, 220, 182, 191, 134, 150]
-        }, {
-          name: 'CUCC',
-          type: 'line',
-          smooth: true,
-          symbol: 'circle',
-          symbolSize: 5,
-          showSymbol: false,
-          lineStyle: {
-            normal: {
-              width: 1
-            }
+          {
+            name: "4#",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 2,
+                color: "#FF99CC",
+              },
+            },
+
+            itemStyle: {
+              normal: {
+                color: "#FF99CC",
+                borderColor: "#FF99CC",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[3],
           },
-          areaStyle: {
-            normal: {
-              color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
-                offset: 0,
-                color: 'rgba(219, 50, 51, 0.3)'
-              }, {
-                offset: 0.8,
-                color: 'rgba(219, 50, 51, 0)'
-              }], false),
-              shadowColor: 'rgba(0, 0, 0, 0.1)',
-              shadowBlur: 10
-            }
+          {
+            name: "供水",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 2,
+                color: "#336699",
+              },
+            },
+
+            itemStyle: {
+              normal: {
+                color: "#336699",
+                borderColor: "#336699",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[4],
           },
-          itemStyle: {
-            normal: {
-              color: 'rgb(219,50,51)',
-              borderColor: 'rgba(219,50,51,0.2)',
-              borderWidth: 12
-            }
+          {
+            name: "回水",
+            type: "line",
+            smooth: true,
+            symbol: "circle",
+            symbolSize: 5,
+            showSymbol: false,
+            lineStyle: {
+              normal: {
+                width: 2,
+                color: "#0099FF",
+              },
+            },
+
+            itemStyle: {
+              normal: {
+                color: "#0099FF",
+                borderColor: "#0099FF",
+                borderWidth: 12,
+              },
+            },
+            data: this.chartData.y[5],
           },
-          data: [220, 182, 125, 145, 122, 191, 134, 150, 120, 110, 165, 122]
-        }]
-      })
-    }
-  }
-}
+        ],
+      });
+    },
+  },
+};
 </script>
