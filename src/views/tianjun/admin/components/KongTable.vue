@@ -143,7 +143,14 @@ export default {
       this.list = listData;
     },
     openHistory(row) {
-      this.$router.push({ path: "/chart/" + row.name });
+      let url = window.location.href;
+      let area = "tianjun-1-bkk2";
+      if (url.endsWith("21")) {
+        area = "tianjun-2-bkk1";
+      } else if (url.endsWith("22")) {
+        area = "tianjun-2-bkk2";
+      }
+      this.$router.push({ path: "/chart/" + area + "$" + row.name });
     },
   },
 };

@@ -12,7 +12,7 @@ export function getTemperatures(params) {
   })
 }
 
-export function getRackHistory(name, period) {
+export function getRackHistory(name, period, area) {
   //const baseUrl = 'http://47.119.173.119:8090/data/'
   //const baseUrl = 'http://localhost:8000/'
   // http://47.119.173.119:8090/monitor/rack/history?area=tianjun&end=1652843319&start=1652836119&name=TA30%E5%9B%9E%E6%B0%B4%E6%B8%A9%E5%BA%A6
@@ -31,7 +31,7 @@ export function getRackHistory(name, period) {
   }
   start = Math.floor(start / 1000);
   end = Math.floor(end / 1000);
-  const baseUrl = `http://47.119.173.119:8090/monitor/rack/history?area=tianjun&start=${start}&end=${end}&name=`
+  const baseUrl = `http://47.119.173.119:8090/monitor/rack/history?area=${area}&start=${start}&end=${end}&name=`
   return Promise.all([
     request({ url: `${baseUrl}${name}-1%23温度`, method: 'get' }),
     request({ url: `${baseUrl}${name}-2%23温度`, method: 'get' }),

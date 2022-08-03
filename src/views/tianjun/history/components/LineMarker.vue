@@ -130,7 +130,8 @@ export default {
 
       console.log("period:", period);
       // request data
-      getRackHistory(this.$route.params.rack_id, period).then((res) => {
+      let params = this.$route.params.rack_id.split("$");
+      getRackHistory(params[1], period, params[0]).then((res) => {
         console.log("res:", res);
         // 1,2,3,4,供水，回水
         this.chartData = this.buildXY(period, 20, res);
