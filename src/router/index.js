@@ -63,8 +63,20 @@ export const constantRoutes = [
       {
         path: 'list',
         component: () => import('@/views/tianjun/index'),
-        name: '天峻',
-        meta: { title: '天峻', icon: 'dashboard', affix: true }
+        name: '天峻1号点2黑',
+        meta: { title: '天峻1号点2黑', icon: 'dashboard', affix: true }
+      },
+      {
+        path: 'list21',
+        component: () => import('@/views/tianjun/index'),
+        name: '天峻2号点1黑',
+        meta: { title: '天峻2号点1黑', icon: 'dashboard', affix: true }
+      },
+      {
+        path: 'list22',
+        component: () => import('@/views/tianjun/index'),
+        name: '天峻2号点2黑',
+        meta: { title: '天峻2号点2黑', icon: 'dashboard', affix: true }
       },
       {
         path: 'chart/:rack_id',
